@@ -1,0 +1,242 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	min-height: 50px;
+	line-height: 50px;
+	background-color: white;
+	z-index: 1030;
+}
+
+.navbar-nav .nav-link.active {
+	color: #000000;
+  }
+.navbar .navbar-brand img {
+	position: absolute;
+      left: 3%;
+      top: 0;
+
+}
+.navbar-nav {
+	text-align: left;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+  }
+  
+  .navbar-nav .nav-item {
+	padding-left: 50px;
+  }
+
+  .navbar .nav-item a {
+    color: #96501E;
+    text-transform: uppercase;
+    font-weight: 550;
+    font-size: 18px;
+  }
+  .navbar .nav-item a:hover {
+    color: #3A190A;
+  }
+  .navbar .nav-link {
+    position: relative;
+    padding: 0;
+  }
+.login-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  padding: 20px;
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/background.webp') no-repeat center center/cover;
+  background-color: #fff2cb;
+  filter: blur(8px); 
+  z-index: -1;
+}
+.login-container {
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 170px;
+}
+.login-container h2 {
+    margin: 0 0 20px;
+    text-align: center;
+    color: #96501E;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #96501E;
+    box-shadow: 0 0 4px #79390c(0, 123, 255, 0.5);
+}
+
+.forgot {
+  font-size: 14px; 
+  color: gray;
+}
+
+.forgot a:hover{
+  text-decoration: underline;
+  
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #FEDB71;
+    color: #96501E;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  color: #6a3006;
+    background-color: #ffbf00;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #FEDB71;
+  color: #96501E;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-button:hover {
+color: #6a3006;
+  background-color: #ffbf00;
+}
+
+.continue {
+  font-size: 12px; 
+  color: gray;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-footer a {
+    color: #96501E;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+.d-flex {
+	margin-left: auto; 
+	display: flex;
+	align-items: center;
+  }
+  
+  .d-flex .btn {
+	padding: 8px 28px;
+	border-radius: 10px;
+	font-size: 14px; 
+	transition: all 0.3s ease; 
+  }
+  
+  .d-flex .btn-primary {
+	position: fixed;
+	top: 16px;
+	right: 10%;
+	background-color: #FEDB71;
+	border: none;
+	color: #96501E;
+  }
+  
+  .d-flex .btn-outline-secondary {
+	position: fixed;
+	top: 16px;
+	right: 3%;
+	background-color: transparent;
+	border: 2px solid #FEDB71;
+	color: #96501E; 
+  }
+  
+  .d-flex .btn-primary:hover {
+	background-color: #ffbf00;
+  }
+  
+  .d-flex .btn-outline-secondary:hover {
+	background-color: #ffbf00; 
+	color: #96501E;
+  }
+  
+  .d-flex .btn:focus {
+	outline: none;
+  }
+
+
+.social-login {
+  display: flex; 
+  justify-content: center; 
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.social-icon {
+  width: 30px; 
+  height: 30px;
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.social-icon:hover {
+  transform: scale(1.2); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Scanner</title>
+    <script src="./qrScript.js"></script>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h2>QR Scanner</h2>
+        <div id="reader" style="width: 500px;"></div>
+        <div id="show" style="display: none;">
+            <h4>Scanned Result</h4>
+            <p style="color: blue;" id="result"></p>
+        </div>
+        <div id="status" style="display: none; margin-top: 10px;">
+            <p id="statusMessage"></p>
+        </div>
+    </div>
+
+    <script>
+        const html5Qrcode = new Html5Qrcode('reader');
+
+        const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+            if(decodedText) {
+                document.getElementById('show').style.display = 'block';
+                document.getElementById('result').textContent = decodedText;
+
+                const urlParams = new URLSearchParams(window.location.search);
+                const eventName = urlParams.get("event_name");
+
+                if (!eventName) {
+                    alert("Error: Event name is missing. Cannot store attendance.");
+                    return;
+                }
+
+                // Send scanned data to server using AJAX
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'storeAttendace.php', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onreadystatechange = function() {
+                    if(xhr.readyState == 4 && xhr.status == 200) {
+                        // Display success or error message on scanner page
+                        document.getElementById('status').style.display = 'block';
+                        document.getElementById('statusMessage').textContent = xhr.responseText;
+                    }
+                };
+                xhr.send(`student_id=${encodeURIComponent(decodedText)}&event_name=${encodeURIComponent(eventName)}`);
+            }
+        };
+
+        const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+        html5Qrcode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
+    </script>
+</body>
+</html>
